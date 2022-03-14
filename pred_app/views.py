@@ -66,6 +66,8 @@ def loginview(request):
 def Index_Data(request):
     nsel = Nse()
     stock_list = nsel.get_stock_codes()
+    del stock_list["SYMBOL"]
+    print(stock_list)
     # stock_list= {v: k for k, v in stock_list.items()}
     # print(stock_list)
     endata = datetime.datetime.today().date()
