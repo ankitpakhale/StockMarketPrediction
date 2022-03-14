@@ -1,0 +1,67 @@
+{% extends "pred_app/base.html" %}
+{% load static %}
+{% block nav %}
+<li>
+    <a href="index">
+        Home
+    </a>
+</li>
+<li class="active">
+    <a href="pred">
+        Prediction
+    </a>
+</li>
+
+
+<li>
+    {% for i in data %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>    <a href="{% url 'Show_Data' i.id %}">{{i}}</a></td>
+        
+    </tr>
+    {% endfor %}
+</li>
+<li>
+    <a href="{% url 'home' %}">
+        Stock Analysis
+    </a>
+</li>
+<li>
+    <a href="{% url 'dashboard' %}">
+        Analysis History 
+        </a>
+</li>
+{% endblock nav %}
+{% block content %}
+<div class="content">
+    <img alt="" height="180" src="https://thelinknewspaper.ca/images/articles/Volume_36/Special/_resized/mediadem.polls.LauraLalonde.gif" width="500"/>
+    <div class="sidebar">
+       
+    </div>
+    <div class="form-group col-sm-6 col-sm-offset-1">
+        <h2 align="center">
+            Get Your Predictions For Any Company!
+        </h2>
+        <form align="left" class="" id="search">
+            <input class="form-control typeahead" data-url2="{% static 'pred_app/data/stock2.json' %}" data-url="{% static 'pred_app/data/stock.json' %}" id="typeahead" placeholder="Search Stock Symbol..." type="text" usr-url=""/>
+        </form>
+    </div>
+    <br>
+        <br>
+            <br>
+                <br>
+                    <br>
+                        <br>
+                            <br>
+                                <br>
+                                </br>
+                            </br>
+                        </br>
+                    </br>
+                </br>
+            </br>
+        </br>
+    </br>
+</div>
+{% endblock content %}

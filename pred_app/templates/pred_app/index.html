@@ -1,0 +1,42 @@
+{% extends "pred_app/base.html" %}
+{% block nav %}
+<li class="active">
+    <a href="index">
+        Home
+    </a>
+</li>
+<li>
+    <a href="{% url 'pred' %}">
+        Prediction
+    </a>
+</li>
+
+<li>
+    {% for i in data %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>    <a href="{% url 'Show_Data' i.id %}">{{i}}</a></td>
+        
+    </tr>
+    {% endfor %}
+</li>
+<li>
+    <a href="{% url 'home' %}">
+        Stock Analysis
+    </a>
+</li>
+<li>
+    <a href="{% url 'dashboard' %}">
+        Analysis History 
+        </a>
+</li>
+{% endblock nav %}
+{% block content %}
+<h1>Stock prediction using LSTM </h1>
+
+<!-- TradingView Widget END -->
+<br>
+    <br>
+        {% endblock content %}
+    </br>
+</br>
