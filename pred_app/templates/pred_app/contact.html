@@ -9,24 +9,27 @@
 
     <h1 class="main">To Contact Us</h1>
 
-        <form action="#" id="sendemail" method="post" class="cform">
-       
+        <form action="#" id="sendemail" method="POST" class="cform">
+                {% csrf_token %}
                 <li>
-                    <input placeholder="Name" required class="text" id="name" name="name"/>
+                    <input placeholder="Name" required class="text" type="text" id="name" name="name"/>
                 </li>
                 <li>
-                    <input placeholder="Email Address" required class="text" id="email" name="email"/>
+                    <input placeholder="Email Address" required class="text" type="text" id="email" name="email"/>
                 </li>
                 <li>
-                    <input placeholder="Website" class="text" id="website" name="website"/>
+                    <input placeholder="Website" class="text" class="text" id="website" name="website"/>
                 </li>
                 <li>
-                    <textarea placeholder="Your Message" cols="50" id="message" name="message" rows="8"></textarea>
+                    <textarea placeholder="Your Message" class="text" cols="50" id="message" name="message" rows="8"></textarea>
                 </li>
                 <li>
-                    <input class="type-2" name="imageField" type="submit"/>
+                    <input class="type-2" name="sub" type="submit"/>
                 </li>
         </form>
+
+        <script>alert('{{k}}')</script>
+
     </div>
 </div>
 {% endblock content %}

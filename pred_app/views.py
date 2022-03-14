@@ -26,7 +26,7 @@ import numpy as np
 from Demo1.settings import BASE_DIR
 import os
 import datetime
-from .models import NseData
+from .models import *
 from plotly.offline import plot
 from .forms import UserForm
 from plotly.graph_objs import Scatter
@@ -217,7 +217,29 @@ def pred(request):
     return render(request, 'pred_app/prediction.html')
 
 def contact(request):
-	return render(request, 'pred_app/contact.html')
+    k = ''
+    print("1st")
+
+    if request.method == "POST":
+        print("2st")
+        name = request.POST['name']
+        email = request.POST['email']
+        website = request.POST['website']
+        msg = request.POST['message']
+        a = Contact()
+        a.name = name
+        a.email = email
+        a.website = website
+        a.msg = msg
+        a.save()
+        print("3st")
+        k = 'Data Saved Properly'
+        return render(request, 'pred_app/contact.html', {'k': k})
+    else:
+        print("4st")
+        k = 'Data NOT Saved Properly'
+    
+    return render(request, 'pred_app/contact.html', {'k': k})
 
 def search(request, se, stock_symbol):
 	import json
