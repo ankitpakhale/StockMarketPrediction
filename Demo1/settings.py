@@ -44,7 +44,7 @@ ROOT_URLCONF = 'Demo1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['G:/prgrms playground/Internships/Data Science/Django/StockMarket/Demo1/Demo1/pred_app/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,99 +1,168 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" style="background-image: url(https://wallpapercave.com/wp/wp2800193.jpg);">
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+    
     <head>
-        {% load static %}
-        <title>
-             Stock Prediction
-        </title>
-        <!-- get the required files from 3rd party sources -->
-        <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-            <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-            <link href="{% static 'pred_app/css/style.css' %}" rel="stylesheet" type="text/css"/>
-            <!-- Bootstrap -->
-            <link href="{% static 'pred_app/css/bootstrap.css' %}" rel="stylesheet" type="text/css">
-                <link href="{% static 'pred_app/fonts/font-awesome/css/font-awesome.css' %}" rel="stylesheet" type="text/css">
-                    <link href="{% static 'pred_app/css/menusearch.css' %}" rel="stylesheet" type="text/css">
-                        <!-- Stylesheet================================================== -->
-                        <link href="{% static 'pred_app/css/style.css' %}" rel="stylesheet" type="text/css">
-                            <link href="{% static 'pred_app/css/responsive.css' %}" rel="stylesheet" type="text/css">
-                                <script src="{% static 'pred_app/js/modernizr.custom.js' %}" type="text/javascript">
-                                </script>
-                                <link href="http://fonts.googleapis.com/css?family=Raleway:500,600,700,100,800,900,400,200,300" rel="stylesheet" type="text/css">
-                                    <link href="http://fonts.googleapis.com/css?family=Playball" rel="stylesheet" type="text/css">
-                                        <script src="{% static 'pred_app/js/jquery.1.11.1.js' %}" type="text/javascript">
-                                        </script>
-                                        <script src="{% static 'pred_app/js/jquery-1.10.2.min.js' %}" type="text/javascript">
-                                        </script>
-                                        <script src="{% static 'pred_app/js/handlebars.js' %}">
-                                        </script>
-                                        <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js" type="text/javascript">
-                                        </script>
-                                    </link>
-                                </link>
-                            </link>
-                        </link>
-                    </link>
-                </link>
-            </link>
-        </link>
-    </head>
-    <body>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
+        
+        <title>Stock Prediction</title>
+        
+        <!-- Meta-Tags -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <link rel="stylesheet" href="{% static 'css/newstyle.css' %}" type="text/css" media="all">
+
+
+        <!-- ------------------------old start--------------------------- -->
+        <!-- <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css"></link> -->
+        <!-- <link href="{% static 'pred_app/css/style.css' %}" rel="stylesheet" type="text/css" /></link> -->
+        
+        
+        <!-- <link href="{% static 'pred_app/css/bootstrap.css' %}" rel="stylesheet" type="text/css"></link> -->
+        <!-- <link href="{% static 'pred_app/fonts/font-awesome/css/font-awesome.css' %}" rel="stylesheet" type="text/css"> -->
+        <link href="{% static 'pred_app/css/menusearch.css' %}" rel="stylesheet" type="text/css"></link>
+        
+        
+        <!-- <link href="{% static 'pred_app/css/style.css' %}" rel="stylesheet" type="text/css"></link> -->
+        <!-- <link href="{% static 'pred_app/css/responsive.css' %}" rel="stylesheet" type="text/css"></link> -->
+        <script src="{% static 'pred_app/js/modernizr.custom.js' %}" type="text/javascript">
         </script>
-        <script src="{% static 'pred_app/js/jquery.1.11.1.js'%}" type="text/javascript">
-        </script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="{% static 'pred_app/js/bootstrap.js'%}" type="text/javascript">
-        </script>
-        <!-- Javascripts
-    ================================================== -->
-        <script src="{% static 'pred_app/js/typeahead.js'%}">
-        </script>
-        <script src="{% static 'pred_app/js/search.js'%}">
-        </script>
-        <div class="header" style="background-color: rgb(40, 40, 40); color: white;">
-            <div class="logo">
-                <h1>
-                    <a href="index" onmouseover="mouseOver()" onmouseout="mouseOut()">
-       
-                        <br>
-                            
-                                One stop solution to smart prediction 
-                    
-                        </br>
-                    </a>
-                </h1>
-            </div>
-            <div class="menu_nav">
-                <ul>
-                    {% block nav %}{% endblock %}
-                </ul>
-            </div>
-            <div class="clr">
-            </div>
-            <div class="hbg">
-                <img alt="" class="fl" height="400px" src="{% static 'pred_app/img/image7.jpg' %}" width="100%"/>
-            </div>
-            <div class="clr">
-            </div>
+        <!-- <link href="http://fonts.googleapis.com/css?family=Raleway:500,600,700,100,800,900,400,200,300" rel="stylesheet" type="text/css"></link> -->
+        <link href="http://fonts.googleapis.com/css?family=Playball" rel="stylesheet" type="text/css"></link>
+        <script src="{% static 'pred_app/js/jquery.1.11.1.js' %}" type="text/javascript"></script>
+        <script src="{% static 'pred_app/js/jquery-1.10.2.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'pred_app/js/handlebars.js' %}"></script>
+        <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+        
+        <!-- ------------------------old end--------------------------- -->
+
+
+</head>
+
+<body>
+    <div class="p-5 text-center bg-image">
+
+        <nav class="navbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'pred' %}">Prediction</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- ------------------------------------------------------------ -->
+
+
+        <!-- <!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="background-image: url(https://wallpapercave.com/wp/wp2800193.jpg);">
+
+<head>
+    <title>
+        Stock Prediction
+    </title> -->
+
+
+
+        <body>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
+            </script>
+            <script src="{% static 'pred_app/js/jquery.1.11.1.js'%}" type="text/javascript">
+            </script>
+
+            <script src="{% static 'pred_app/js/bootstrap.js'%}" type="text/javascript">
+            </script>
+
+            <script src="{% static 'pred_app/js/typeahead.js'%}">
+            </script>
+            <script src="{% static 'pred_app/js/search.js'%}">
+            </script>
+
+            <!-- <div class="header" style="background-color: rgb(40, 40, 40); color: white;">
+        <div class="logo">
+            <h1>
+                <a href="index" onmouseover="mouseOver()" onmouseout="mouseOut()">
+                    <br>
+                    One stop solution to smart prediction
+                    </br>
+                </a>
+            </h1>
         </div>
-        {% block content %}{% endblock %}
+        <div class="menu_nav">
+            <ul>
+                {% block nav %}{% endblock %}
+            </ul>
+        </div>
         <div class="clr">
         </div>
+        <div class="hbg">
+            <img alt="" class="fl" height="400px" src="{% static 'pred_app/img/image7.jpg' %}" width="100%" />
+        </div>
+        <div class="clr">
+        </div>
+    </div>
+    <div class="clr">
+    </div> -->
 
-    </body>
+            <!-- </body> -->
+            {% block content %}{% endblock %}
+
+
+            <!-- Footer -->
+            <section id="footer">
+                <!-- <div class="container"> -->
+
+                <h5>Stock Market</h5>
+                <div class="row">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'pred' %}">Prediction</a>
+                    </li>
+
+                </div>
+
+                <div class="faltu">
+                    <!-- <p><u><a href="https://www.nationaltransaction.com/">Stock Market</a></u> is a Registered MSP/ISO of Elavon, Inc. Georgia [a wholly owned subsidiary of U.S. Bancorp, Minneapolis, MN</p> -->
+                    <p class="h6">© All right Reversed.</p>
+
+                    <!-- <a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank">Sunlimetech</a></p> -->
+                </div>
+
+                <!-- </div> -->
+            </section>
+            <!-- ./Footer -->
+
+        </body>
+
+        <script type="text/javascript">
+            function mouseOver() {
+                document.getElementById("stocks_logo").style.color = "#fe001a";
+                document.getElementById("preds_logo").style.color = "#97c950";
+            }
+            function mouseOut() {
+                document.getElementById("stocks_logo").style.color = "#97c950";
+                document.getElementById("preds_logo").style.color = "#fe001a";
+            }
+        </script>
+
 </html>
-<div class="clr">
-</div>
-
-<script type="text/javascript">
-    function mouseOver() {
-  document.getElementById("stocks_logo").style.color = "#fe001a";
-  document.getElementById("preds_logo").style.color = "#97c950";
-}
-function mouseOut() {
-  document.getElementById("stocks_logo").style.color = "#97c950";
-  document.getElementById("preds_logo").style.color = "#fe001a";
-}
-</script>

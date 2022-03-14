@@ -46,6 +46,8 @@ def regview(request):
         else: 
             return render(request,'html/registration.html',{'error': "INVALID FORM" })
     return render(request,'html/registration.html')
+
+
 def loginview(request):
     if request.POST:
         try:
@@ -60,7 +62,7 @@ def loginview(request):
         except:
             return render(request,'html/login.html',{'error': "INCORRECT DETAILS" })
     return render(request,'html/login.html')
-# Create your views here.
+
 def Index_Data(request):
     nsel = Nse()
     stock_list = nsel.get_stock_codes()
@@ -201,14 +203,6 @@ def Show_Data(request,id):
     tables_data = stock_data[0].to_html(classes='mystyle')
     
     return render(request,'DataSet.html',{'table':tables_data,'data':data})
-
-
-
-
-
-
-
-
 
 
 def redirect_root(request):
